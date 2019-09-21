@@ -1,5 +1,5 @@
 <template>
-  <v-app class="home">
+  <v-app class="main">
     <v-container class="d-flex justify-center">
       <Heart></Heart>
     </v-container>

@@ -28,4 +28,7 @@ export default {
 <style>
 #app {
 }
+.main {
+  padding-top: 40px;
+}
 </style>
