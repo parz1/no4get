@@ -1,7 +1,8 @@
 <template>
   <v-app class="main">
-    <v-container class="d-flex justify-center">
+    <v-container class="d-flex flex-column align-center justify-center">
       <Heart></Heart>
+      <span class="display-4">212</span>
     </v-container>
   </v-app>
 </template>
