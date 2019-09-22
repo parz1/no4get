@@ -13,7 +13,6 @@
       </v-toolbar-title>
     </v-app-bar>
     <router-view />
-    <div id="playground-example" style="display:block;height:1000px;width:100px;">1</div>
   </v-app>
 </template>
 
