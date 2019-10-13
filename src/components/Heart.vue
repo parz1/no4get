@@ -7,7 +7,7 @@
     xmlns="http://www.w3.org/2000/svg"
     p-id="6753"
     width="200"
-    height="200"
+    height="120"
     :style="{'animation-duration':beetTime}"
     @click="addSpeed"
   >
@@ -40,9 +40,9 @@ export default {
   methods: {
     addSpeed() {
       this.speed += 10;
-      setTimeout(() => {
+      if(this.speed > 200){
         this.speed = 60;
-      }, 5000);
+      }
     }
   },
   computed: {
