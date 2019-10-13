@@ -13,9 +13,8 @@
       </v-toolbar-title>
 
       <div class="flex-grow-1"></div>
-      <v-avatar>
-        <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
-      </v-avatar>
+
+      <Weather></Weather>
     </v-app-bar>
     <router-view />
     <v-footer>
@@ -26,7 +25,11 @@
 </template>
 
 <script>
+import Weather from "@/components/Weather";
 export default {
+  components: {
+    Weather
+  },
   data() {
     return {};
   }

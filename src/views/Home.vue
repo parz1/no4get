@@ -25,25 +25,17 @@
 // @ is an alias to /src
 import Heart from "@/components/Heart.vue";
 import Loading from "@/components/Loading";
+import Weather from '@/components/Weather';
 import { fetch } from "@/api";
 
 export default {
   name: "home",
   components: {
     Heart,
-    Loading
+    Loading,
+    Weather
   },
-  mounted() {
-    fetch(
-        "https://api.caiyunapp.com/v2/dzXnDU3NLcQRqM4M/121.6544,25.1552/realtime.json"
-      )
-      .then(res => {
-        console.label(res);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  },
+  mounted() {},
   methods: {}
 };
 </script>
@@ -51,5 +43,11 @@ export default {
 <style>
 .main {
   padding-top: 56px;
+}
+.heart {
+  margin-top: 10vh;
+}
+.kotoba {
+  margin-top: 10vh;
 }
 </style>

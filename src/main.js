@@ -3,9 +3,12 @@ import App from './App.vue'
 import vuetify from './plugins/vuetify';
 import router from './router'
 import store from './store'
+import VueJsonp from 'vue-jsonp';
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 Vue.config.productionTip = false
+
+Vue.use(VueJsonp)
 
 new Vue({
   vuetify,

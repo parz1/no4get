@@ -5,10 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    weather: {}
   },
   mutations: {
-
+    setWeather(state, weather) {
+      state.weather = weather;
+    }
   },
   actions: {
 
