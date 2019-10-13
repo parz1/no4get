@@ -8,12 +8,20 @@
       elevate-on-scroll
     >
       <v-toolbar-title>
-        <span>Parz!</span>
+        <span>Vvxir!</span>
         <span class="font-weight-light">NO4GET</span>
       </v-toolbar-title>
+
+      <div class="flex-grow-1"></div>
+      <v-avatar>
+        <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
+      </v-avatar>
     </v-app-bar>
     <router-view />
-    <div id="playground-example" style="display:block;height:1000px;width:100px;">1</div>
+    <v-footer>
+      <div class="flex-grow-1"></div>
+      <div>&copy; {{ new Date().getFullYear() }}</div>
+    </v-footer>
   </v-app>
 </template>
 
