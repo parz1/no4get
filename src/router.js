@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Farm from './views/Farm.vue';
+import Weather from './views/Weather.vue';
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/farm',
       name: 'farm',
       component: Farm
+    },
+    {
+      path: '/weather',
+      name: 'weather',
+      component: Weather
     }
   ]
 })

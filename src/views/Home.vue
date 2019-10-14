@@ -1,7 +1,8 @@
 <template>
   <v-app>
-    <v-container class="main d-flex flex-column align-center justify-center">
-      <Heart class="heart"></Heart>
+    <v-container class="d-flex flex-column align-center justify-center container">
+      <Heart v-if="stat=='home'" class="heart"></Heart>
+      <Timer v-if="stat=='timer'"></Timer>
       <div class="d-flex flex-column align-center kotoba">
         <span class="title">YOU STOLE MY HEART</span>
         <span class="subtitle-1">But I'll let u keep it.</span>
@@ -10,10 +11,10 @@
         <v-btn text icon x-large color="pink">
           <v-icon>mdi-flower</v-icon>
         </v-btn>
-        <v-btn text icon x-large color="pink">
+        <v-btn text icon x-large color="pink" @click="stat='home'">
           <v-icon>mdi-heart</v-icon>
         </v-btn>
-        <v-btn text icon x-large color="pink">
+        <v-btn text icon x-large color="pink" @click="stat='timer'">
           <v-icon>mdi-timer</v-icon>
         </v-btn>
       </div>
@@ -24,16 +25,21 @@
 <script>
 // @ is an alias to /src
 import Heart from "@/components/Heart.vue";
-import Loading from "@/components/Loading";
-import Weather from '@/components/Weather';
+import Timer from "@/components/Timer";
+import Weather from "@/components/Weather";
 import { fetch } from "@/api";
 
 export default {
   name: "home",
   components: {
     Heart,
-    Loading,
+    Timer,
     Weather
+  },
+  data(){
+    return {
+      stat:"timer"
+    }
   },
   mounted() {},
   methods: {}
@@ -41,7 +47,7 @@ export default {
 </script>
 
 <style>
-.main {
+.container {
   padding-top: 56px;
 }
 .heart {

@@ -19,7 +19,7 @@
     <router-view />
     <v-footer>
       <div class="flex-grow-1"></div>
-      <div>&copy; {{ new Date().getFullYear() }}</div>
+      <div>&copy; {{ info + new Date().getFullYear() }}</div>
     </v-footer>
   </v-app>
 </template>
@@ -31,15 +31,14 @@ export default {
     Weather
   },
   data() {
-    return {};
+    return {
+      info: "Made by parz1 who loves vvxir. "
+    };
   }
 };
 </script>
 
 <style>
 #app {
-}
-.main {
-  padding-top: 56px;
 }
 </style>

@@ -1,7 +1,7 @@
 import axios from 'axios'; // 引入axios
 
 axios.defaults.timeout = 5000;
-axios.defaults.baseURL ='http://localhost:3000';
+axios.defaults.baseURL ='http://49.234.177.29:3001';
 
 //http request 拦截器
 axios.interceptors.request.use(
