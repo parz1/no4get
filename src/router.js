@@ -35,6 +35,11 @@ export default new Router({
       path: '/weather',
       name: 'weather',
       component: Weather
+    },
+    {
+      path: '/happybirthday',
+      name: 'happybirthday',
+      component: () => import(/* webpackChunkName: "hb2019" */ './views/Specials/HB2019.vue')
     }
   ]
 })

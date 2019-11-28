@@ -16,7 +16,7 @@ axios.interceptors.request.use(
       // }
       return config;
     },
-    error => {
+    err => {
       return Promise.reject(err);
     }
   );
@@ -25,16 +25,16 @@ axios.interceptors.request.use(
   //http response 拦截器
   axios.interceptors.response.use(
     response => {
-      if(response.data.errCode ==2){
-        router.push({
-          path:"/login",
-          querry:{redirect:router.currentRoute.fullPath}//从哪个页面跳转
-        })
-      }
+      // if(response.data.errCode ==2){
+      //   router.push({
+      //     path:"/login",
+      //     querry:{redirect:router.currentRoute.fullPath}//从哪个页面跳转
+      //   })
+      // }
       return response;
     },
-    error => {
-      return Promise.reject(error)
+    err => {
+      return Promise.reject(err)
     }
   )
   

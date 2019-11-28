@@ -5,12 +5,12 @@
       <span class="display-4 font-weight-bold font-italic">{{day}}</span>DAYS
     </div>
     <div>
-      <span class="display-1 font-italic">{{hour}}</span>HOURS
-      <span class="display-1 font-italic">{{min}}</span>MINS
+      <span class="display-1 font-italic">{{hour+" "}}</span>HOURS
+      <span class="display-1 font-italic" style="margin-left:10px;">{{min+" "}}</span>MINS
     </div>
 
     <div>
-      <span class="display-1 font-italic">{{second}}</span>SECONDS
+      <span class="display-1 font-italic">{{second+" "}}</span>SECONDS
     </div>
   </v-container>
 </template>

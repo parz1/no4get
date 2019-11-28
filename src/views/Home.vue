@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-container class="d-flex flex-column align-center justify-center container">
-      <Heart v-if="stat=='home'" class="heart"></Heart>
+      <Heart  class="heart"></Heart>
       <Timer v-if="stat=='timer'"></Timer>
       <div class="d-flex flex-column align-center kotoba">
         <span class="title">YOU STOLE MY HEART</span>
@@ -26,15 +26,13 @@
 // @ is an alias to /src
 import Heart from "@/components/Heart.vue";
 import Timer from "@/components/Timer";
-import Weather from "@/components/Weather";
-import { fetch } from "@/api";
+//import { fetch } from "@/api";
 
 export default {
   name: "home",
   components: {
     Heart,
-    Timer,
-    Weather
+    Timer
   },
   data(){
     return {
