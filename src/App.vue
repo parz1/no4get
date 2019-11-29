@@ -16,29 +16,31 @@
 
       <div class="flex-grow-1"></div>
 
-      <weather-icon></weather-icon>
+      <weather-icon v-on:click.native="gotoWeather"></weather-icon>
     </v-app-bar>
-    <v-navigation-drawer temporary app v-model="drawer">
+    <v-navigation-drawer dark temporary app v-model="drawer">
       <v-list-item>
         <v-list-item-content>
-          <v-list-item-title class="title">Application</v-list-item-title>
-          <v-list-item-subtitle>subtext</v-list-item-subtitle>
+          <v-list-item-title class="display-1 font-weight-bold">NO4GET</v-list-item-title>
+          <v-list-item-subtitle>今天也要元气满满的哦</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
 
       <v-divider></v-divider>
 
-      <v-list dense nav>
-        <v-list-item v-for="item in items" :key="item.title" link>
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
+      <v-list-item-group v-model="item" color="primary">
+        <v-list dense nav>
+          <v-list-item v-for="item in items" :key="item.title" link :to="item.to">
+            <v-list-item-icon>
+              <v-icon x-large>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
 
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+            <v-list-item-content>
+              <v-list-item-title class="body-1 font-weight-light">{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-list-item-group>
     </v-navigation-drawer>
 
     <router-view />
@@ -59,10 +61,14 @@ export default {
   data() {
     return {
       info: "Made by parz1 who loves vvxir. ",
+      item: 1,
       items: [
-        { title: "Dashboard", icon: "mdi-view-dashboard" },
-        { title: "Photos", icon: "mdi-image" },
-        { title: "About", icon: "mdi-help-box" }
+        { title: "HOME", icon: "mdi-calendar", to: "/" },
+        { title: "WEATHER", icon: "mdi-weather-hail", to: "/weather" },
+        { title: "WE'VE BEEN", icon: "mdi-timeline-text-outline", to: "/wevebeen" },
+        { title: "YAKUSOKU", icon: "mdi-flower-poppy", to: "/farm" },
+        { title: "SPECIAL DAYS", icon: "mdi-calendar-star", to: "/special" },
+        { title: "About", icon: "mdi-information", to: "/about" }
       ],
       drawer: null,
       right: null
@@ -73,7 +79,10 @@ export default {
       isSpecial: state => state.isSpecial
     })
   },
-  methods: {}
+  methods: {
+    gotoWeather() {
+      this.$router.push("/weather");
+    }}
 };
 </script>
 

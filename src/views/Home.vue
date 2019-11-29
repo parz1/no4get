@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-container class="d-flex flex-column align-center justify-center container">
-      <Heart  class="heart"></Heart>
+      <Heart class="heart" v-on:click.native="itsASpecialDay"></Heart>
       <Timer v-if="stat=='timer'"></Timer>
       <div class="d-flex flex-column align-center kotoba">
         <span class="title">YOU STOLE MY HEART</span>
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 // @ is an alias to /src
 import Heart from "@/components/Heart.vue";
 import Timer from "@/components/Timer";
@@ -34,13 +35,26 @@ export default {
     Heart,
     Timer
   },
-  data(){
+  data() {
     return {
-      stat:"timer"
+      stat: "timer"
+    };
+  },
+  mounted() {
+    if (this.isSpecial) {
+      this.$router.push("/happybirthday");
     }
   },
-  mounted() {},
-  methods: {}
+  computed: {
+    ...mapState({
+      isSpecial: state => state.isSpecial
+    })
+  },
+  methods: {
+    itsASpecialDay() {
+      this.$router.push("/happybirthday");
+    }
+  }
 };
 </script>
 

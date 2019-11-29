@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Farm from './views/Farm.vue';
 import Weather from './views/Weather.vue';
+import Wevebeen from './views/Wevebeen.vue';
 
 Vue.use(Router)
 
@@ -35,6 +36,17 @@ export default new Router({
       path: '/weather',
       name: 'weather',
       component: Weather
+    },
+    {
+      path: '/wevebeen',
+      name: 'wevebeen',
+      component: Wevebeen
+    },
+    
+    {
+      path: '/special',
+      name: 'special',
+      component: () => import(/* webpackChunkName: "hb2019" */ './views/SpecialDays.vue')
     },
     {
       path: '/happybirthday',

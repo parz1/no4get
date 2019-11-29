@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     weather: {},
-    isSpecial: false
+    isSpecial: true //it's birthday
   },
   mutations: {
     setWeather(state, weather) {
