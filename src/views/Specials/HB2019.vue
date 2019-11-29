@@ -5,6 +5,11 @@
         <v-icon>mdi-close</v-icon>
       </v-btn>
     </div>
+    <v-card flat class="hbcard">
+      <v-responsive :aspect-ratio="16/9">
+          <img src="@/assets/hbsvg.svg" />
+      </v-responsive>
+    </v-card>
     <aplayer
       class="aplayer"
       autoplay
@@ -12,7 +17,7 @@
       :music="{
           title: 'Preparation',
           author: 'Hans Zimmer/Richard Harvey',
-          url: 'http://devtest.qiniudn.com/Preparation.mp3',
+          url: 'http://q0he94stf.bkt.clouddn.com/Yozoh%20-%20Happy%20Birthday.mp3',
           pic: 'http://devtest.qiniudn.com/Preparation.jpg',
           lrc: '[00:00.00]lrc here\n[00:01.00]aplayer'
         }"
@@ -50,5 +55,8 @@ export default {
   position: absolute;
   bottom: 16px;
   right: 16px;
+}
+.hbcard {
+  padding:0;
 }
 </style>
