@@ -6,7 +6,7 @@
       </v-btn>
     </div>
     <v-card flat class="hbcard">
-      <v-responsive :aspect-ratio="16/9">
+      <v-responsive max-width="100vw" :aspect-ratio="16/9">
           <img src="@/assets/hbsvg.svg" />
       </v-responsive>
     </v-card>
